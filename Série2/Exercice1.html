@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Exercice1</title>
+    </head>
+    <body>
+        <script>
+            var n=parseInt(prompt("Entrez le nombre d'éléments du tableau:"));
+            var t=new Array();
+            var pmin=0;
+            var pmax=0;
+            for(var i=0;i<n;i++){
+                t.push(parseInt(prompt("Entrez t["+i+"]:")));
+                if(t[i]<t[pmin])
+                {
+                    pmin=i;
+                }
+                if(t[i]>t[pmax]){
+                    pmax=i;
+                }
+            }            
+            var s="<table border><tr>";
+            for(var i=0;i<n;i++){
+                s+="<td ";
+                if(i==pmin){
+                    s+="style='background-color:green;'>";
+                }
+                else if(i==pmax){
+                    s+="style='background-color:pink;'>";
+                }
+                else{
+                    s+=">";
+                }
+                s+=t[i]+"</td>";
+            }
+            s+="</tr></table>";
+            document.write(s);
+        </script>
+    </body>
+</html>

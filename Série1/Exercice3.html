@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercice2</title>
+    </head>
+    <body>
+        <script>
+            var msg="1: pour calculer la surface d'un disque\n"+
+                    "2: pour calculer le perimetre d'un cercle\n"+
+                    "3: pour calculer le volume d'un cylindre\n"+
+                    "Entrez votre choix:";
+            var c=parseInt(prompt(msg));
+            switch(c){
+                case 1:var r=parseFloat(prompt("Entrez le rayon:"));
+                        let s=r*r*Math.PI;
+                        document.write("La surface est:"+s);
+                        break;
+                case 2: var r=parseFloat(prompt("Entrez le rayon:"));
+                        let p=2*r*Math.PI;
+                        document.write("Le perimetre est:"+p);
+                        break;
+                case 3: var r=parseFloat(prompt("Entrez le rayon:"));
+                        let h=parseFloat(prompt("Entrez la hateur:"));
+                        let v=r*r*h*Math.PI;
+                        document.write("Le volume du cylindre est:"+v);
+                        break;
+                default: document.write("Choix invalide!");  
+            }
+        </script>
+    </body>
+</html>
