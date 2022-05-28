@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function init(){
+        var jour = document.getElementById("jour");
+        var s ="";
+        for (var i=1;i<=31;i++){
+            s+="<option value='"+i+"'>"+i+"</option>";
+        }
+        jour.innerHTML=s;
+        var mois=document.getElementById("mois");
+        var s ="";
+        for (var i=1;i<=12;i++){
+            s+="<option value='"+i+"'>"+i+"</option>";
+        }
+        mois.innerHTML=s;
+        var annee=document.getElementById("annee");
+        var s ="";
+        for (var i=2014;i>=1900;i--){
+            s+="<option value='"+i+"'>"+i+"</option>";
+        }
+        annee.innerHTML=s;
+        
+    } 
+    function verfier(){
+        var tnom=document.getElementById("tnom");
+        var tprenom=document.getElementById("tprenom");
+        if(tnom.value==""||tprenom.value==""){
+            alert("tous les champs sont obligatoires!!");
+            return false;
+
+        }return true;
+
+    }
+    function afficher(){
+        if(verfier()){
+            var tnom=document.getElementById("tnom");
+            var tprenom=document.getElementById("tprenom");
+            var jour=document.getElementById("jour");
+            var mois=document.getElementById("mois");
+            var annee=document.getElementById("annee");
+            s="Nom:"+tnom.value+"<br/>";
+            s+="Preom:"+tprenom.value+"<br/>";
+            s+="Date de naissance:"+jour.value+"/"+mois.value+"/"+annee.value;
+            document.write(s);
+        
+        }return false;
+    }
+    </script>
+</head>
+<body onload="init()">
+    
+    <form align="center"  onsubmit="return afficher()" > 
+        Nom:<br/>
+    
+        <input type ="text"  id="tnom"/><br/>
+    
+        Prenom :<br/>
+        
+        <input type ="text "  id="tprenom"/><br/>
+        Date de naissance :<br/>
+        <select  id="jour"></select>
+        <select id="mois"></select>
+        <select id="annee"></select><br>
+        <br/>
+        <input  type ="reset" value="Annuler"/>
+        <input  type ="submit" value="Valider"/>
+    </form>
+
+</body>
+</html>
